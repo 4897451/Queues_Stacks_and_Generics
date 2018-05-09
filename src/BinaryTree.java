@@ -23,12 +23,12 @@ public class BinaryTree<B> {
     {
         while (Stack != isEmpty)
         {
-            Node<B> node = Stack.dequeuesl;
+            Node<B> node = Stack.dequeues;
             print(Node);
             if (Node.left = null)
             {
                 Stack.push(Node.left);
-                Stack.push(Node.reight);
+                Stack.push(Node.right);
             }
         }
     }

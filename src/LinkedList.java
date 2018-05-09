@@ -12,11 +12,16 @@
  * but I understand you chose L because it makes sense to you at this point
  * If Anything, for the future, use S Since this is a "second"
  * and this would keep better in naming conventions
- * * comment requested by me for elucidation on Generic Types - good form *
+ * comment requested by me for elucidation on Generic Types - good form
+ *
+ * Remember you are always just working with instances of a class not
+ * the class itself.
+ * The `head` property just points to the first instance of a Node class.
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
     // changed permission to protected so I can extend LL class to Queue
+    // "head;" is the 1st instance of the "Node<L>" class.
     protected Node<L> head;
 
     /**
@@ -147,6 +152,11 @@ public class LinkedList<L> {
         return count;
     }
 
+    /**
+     * Looks at head of LL
+     *
+     * @return Node<L> Returns the head of list.
+     */
     public L peek()
     {
         return head.getValue();
