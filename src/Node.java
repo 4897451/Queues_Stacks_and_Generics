@@ -109,29 +109,26 @@ public class Node<T> {
     }
 
     /**
-     * Node<Integer> junk;
-     * junk is an instance of Node<T>.
-     * With fluent interface.
-     * junk->setValue(5)
-     * ->setLeft(1)
-     * ->setRight(10);
-     * <p>
-     * Without fluent interface.
-     * junk->setValue(5);
-     * junk->setLeft(1);
-     * junk->setRight(10);
      *
-     * @param value
-     *     T
+     * With fluent setters.
+     * Node<T> junk = new Node<>(5);
+     * T myValue = junk->setLeft(1)->getValue();
+     * print(myValue); // prints 5.
+     *
+     * Without fluent setters.
+     * Node<T> junk = new Node<>(5);
+     * junk->setLeft(1);
+     * T myValue = junk->getValue();
+     * print(myValue); // prints 5.
+     *
+     * @return <T>
      */
-    public Node<T> setLeft(T value)
+    public T getValue()
     {
-        this.left = new Node<>(value);
-        return this;
+        return this.value;
     }
 
     /**
-     *
      * @param left
      *     Node<T>
      */
@@ -149,15 +146,26 @@ public class Node<T> {
     {
         this.right = right;
         return this;
-
     }
 
     /**
-     * @return <T>
+     * Node<Integer> junk;
+     * junk is an instance of Node<T>.
+     * With fluent interface.
+     * junk->setValue(5)->setLeft(1)->setRight(10);
+     * <p>
+     * Without fluent interface.
+     * junk->setValue(5);
+     * junk->setLeft(1);
+     * junk->setRight(10);
+     *
+     * @param value
+     *     T
      */
-    public T getValue()
+    public Node<T> setLeft(T value)
     {
-        return this.value;
+        this.left = new Node<>(value);
+        return this;
     }
 
     /**
