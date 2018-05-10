@@ -232,7 +232,7 @@ public class LinkedList<L> {
         }
         if (traveler == null)
         {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(" * NO LIST * ");
         }
         if (trailer == null)
         {
