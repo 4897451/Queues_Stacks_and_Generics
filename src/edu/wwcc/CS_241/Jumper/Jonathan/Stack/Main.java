@@ -73,6 +73,7 @@ public class Main {
             ++i;
         } while (i < num);
         System.out.println("\nStacking method testing");
+        System.out.println(stack);
         stack.print();
         System.out.println("Starting Stack size = " + stack.size());
         System.out.println("Pushing 1001");
