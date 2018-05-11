@@ -74,17 +74,26 @@ public class Main {
         } while (i < num);
         System.out.println("\nStacking method testing");
         stack.print();
-        System.out.println("Final LinkedList size = " + stack.size());
-        System.out.println("Pushing");
-        stack.push(101);
-        stack.print();
-        System.out.println("Final LinkedList size = " + stack.size());
-        System.out.println("Popping");
-        stack.pop();
-        stack.print();
-        System.out.println("Final LinkedList size = " + stack.size());
+        System.out.println("Starting Stack size = " + stack.size());
+        System.out.println("Pushing 1001");
+        stack.push(1001);
         stack.print();
         System.out.println("Peeking at top value = " + stack.peek());
+        System.out.println("Current Stack size = " + stack.size());
+        System.out.println("Pushing 2002");
+        stack.push(2002);
         stack.print();
+        System.out.println("Peeking at top value = " + stack.peek());
+        System.out.println("Current Stack size = " + stack.size());
+        System.out.println("Popping " + stack.pop());
+        stack.print();
+        System.out.println("Peeking at top value = " + stack.peek());
+        System.out.println("Current Stack size = " + stack.size());
+        System.out.println("Popping " + stack.pop());
+        stack.print();
+        System.out.println("Peeking at top value = " + stack.peek());
+        System.out.println("Current Stack size = " + stack.size());
+        stack.print();
+        System.out.println("Peeking at top value = " + stack.peek());
     }
 }
