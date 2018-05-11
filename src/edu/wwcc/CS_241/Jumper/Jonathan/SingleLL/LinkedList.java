@@ -37,7 +37,7 @@ public class LinkedList<V> {
         /*
          * If the list is empty set the head to new mode
          */
-        if (this.head == null)
+        if (null == this.head)
         {
             // Creates a new node and stuffs Value into it
             this.head = new Node<>(value);
@@ -63,7 +63,7 @@ public class LinkedList<V> {
          * Finds the last Node
          */
         Node<V> last = this.head;
-        while (last.getNext() != null)
+        while (null != last.getNext())
         {
             last = last.getNext();
         }
@@ -161,20 +161,20 @@ public class LinkedList<V> {
      */
     public void prepend(V value)
     {
-        if (this.head == null) // Checks to see if its the only node
+        if (null != this.head) // Checks to see if its the only node
         {
-            this.append(value);
-        } else
-        {
+            // Least common scenario is having an empty list (null).
+            // So, flipping the if so the most common is in the then part
+            // and less common null == this.head is in else.            //
             // This is a way to increase efficiency of my code.
             // Instead of create a temporary local variable to assign to the new
             // node's next you can do it in a single step by using the other node constructor.
             // Instead I didn't need to create an empty node
             // and assign the value of head to next and then discard
             // the temporary pointer to the old node.
-//            Node<L> temp = this.head; *Deprecated*
             this.head = new Node<>(value, this.head);
-//            this.head.setNext(temp); *Deprecated*
+        } else {
+            this.head = new Node<>(value);
         }
     }
 
@@ -184,7 +184,7 @@ public class LinkedList<V> {
     public void print()
     {
         Node<V> traveler = this.head;
-        while (traveler != null)
+        while (null != traveler)
         {
             System.out.print("Value(" + traveler.getValue() + ")--->");
             //System.out.print(traveler); //*test* <-Traveler at this point
@@ -242,7 +242,7 @@ public class LinkedList<V> {
      */
     public V removeFirst()
     {
-        if (this.head == null)
+        if (null == this.head)
         {
             throw new IndexOutOfBoundsException();
         }
@@ -305,10 +305,10 @@ public class LinkedList<V> {
     }
 
     /**
-     * @return
+     * @return int
      */
     public int size()
     {
-        return 0;
+        return length();
     }
 }

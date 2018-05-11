@@ -32,7 +32,6 @@ public class Node<V> {
     {
         this.value = value;
         this.next = null;
-        // this(value, null);
     }
 
     /**
@@ -48,6 +47,7 @@ public class Node<V> {
         this.value = value;
         this.next = next;
     }
+    // Begin Getters and Setters
 
     /**
      * @return Node<V>
@@ -60,12 +60,14 @@ public class Node<V> {
     /**
      * @param next
      *     Node<V>
+     *
+     * @return Node<V>
      */
-    public void setNext(Node<V> next)
+    public Node<V> setNext(Node<V> next)
     {
         this.next = next;
+        return this;
     }
-    // Begin Getters and Setters
 
     /**
      * @return <V>
@@ -76,11 +78,13 @@ public class Node<V> {
     }
 
     /**
-     * @param value
-     *     T
+     * @param value V
+     *
+     * @return Node<V>
      */
-    public void setValue(V value)
+    public Node<V> setValue(V value)
     {
         this.value = value;
+        return this;
     }
 }
