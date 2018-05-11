@@ -4,7 +4,7 @@
  * Linked Lists
  * 4-12-18
  */
-
+package edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree;
 /**
  * NODE CLASS
  */
@@ -73,7 +73,7 @@ public class Node<T> {
      * @param value
      *     <T>
      * @param left
-     *     Node<T>
+     *     edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>
      */
     public Node(T value, Node<T> left)
     {
@@ -83,11 +83,11 @@ public class Node<T> {
     // Begin Getters and Setters
 
     /**
-     * @return Node<T>
+     * @return edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>
      */
-    public Node<T> getRight()
+    public Node<T> getLeft()
     {
-        return right;
+        return left;
     }
 
     /**
@@ -101,56 +101,8 @@ public class Node<T> {
     }
 
     /**
-     * @return Node<T>
-     */
-    public Node<T> getleft()
-    {
-        return left;
-    }
-
-    /**
-     *
-     * With fluent setters.
-     * Node<T> junk = new Node<>(5);
-     * T myValue = junk->setLeft(1)->getValue();
-     * print(myValue); // prints 5.
-     *
-     * Without fluent setters.
-     * Node<T> junk = new Node<>(5);
-     * junk->setLeft(1);
-     * T myValue = junk->getValue();
-     * print(myValue); // prints 5.
-     *
-     * @return <T>
-     */
-    public T getValue()
-    {
-        return this.value;
-    }
-
-    /**
-     * @param left
-     *     Node<T>
-     */
-    public Node<T> setLeft(Node<T> left)
-    {
-        this.left = left;
-        return this;
-    }
-
-    /**
-     * @param right
-     *     Node<T>
-     */
-    public Node<T> setRight(Node<T> right)
-    {
-        this.right = right;
-        return this;
-    }
-
-    /**
-     * Node<Integer> junk;
-     * junk is an instance of Node<T>.
+     * edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<Integer> junk;
+     * junk is an instance of edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>.
      * With fluent interface.
      * junk->setValue(5)->setLeft(1)->setRight(10);
      * <p>
@@ -165,6 +117,54 @@ public class Node<T> {
     public Node<T> setLeft(T value)
     {
         this.left = new Node<>(value);
+        return this;
+    }
+
+    /**
+     * @return edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>
+     */
+    public Node<T> getRight()
+    {
+        return right;
+    }
+
+    /**
+     * @param right
+     *     edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>
+     */
+    public Node<T> setRight(Node<T> right)
+    {
+        this.right = right;
+        return this;
+    }
+
+    /**
+     *
+     * With fluent setters.
+     * edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T> junk = new edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<>(5);
+     * T myValue = junk->setLeft(1)->getValue();
+     * print(myValue); // prints 5.
+     *
+     * Without fluent setters.
+     * edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T> junk = new edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<>(5);
+     * junk->setLeft(1);
+     * T myValue = junk->getValue();
+     * print(myValue); // prints 5.
+     *
+     * @return <T>
+     */
+    public T getValue()
+    {
+        return this.value;
+    }
+
+    /**
+     * @param left
+     *     edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<T>
+     */
+    public Node<T> setLeft(Node<T> left)
+    {
+        this.left = left;
         return this;
     }
 

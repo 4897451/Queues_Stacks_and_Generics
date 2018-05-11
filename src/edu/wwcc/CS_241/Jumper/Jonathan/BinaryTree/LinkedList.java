@@ -4,6 +4,7 @@
  * Linked Lists
  * 4-11-18
  */
+package edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree;
 
 /**
  * linkedlist class
@@ -16,12 +17,12 @@
  *
  * Remember you are always just working with instances of a class not
  * the class itself.
- * The `head` property just points to the first instance of a Node class.
+ * The `head` property just points to the first instance of a edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node class.
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
-    // changed permission to protected so I can extend LL class to Queue
-    // "head;" is the 1st instance of the "Node<L>" class.
+    // changed permission to protected so I can extend LL class to edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Queue
+    // "head;" is the 1st instance of the "edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<L>" class.
     protected Node<L> head;
 
     /**
@@ -34,7 +35,7 @@ public class LinkedList<L> {
 
     /**
      * @param value
-     *     <L> Passes (Value) into append method | Main property.
+     *     <L> Passes (Value) into append method | edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.Main property.
      */
     public void append(L value)
     {
@@ -59,13 +60,13 @@ public class LinkedList<L> {
     /**
      * Got last linked node.
      *
-     * @return Node<L>|null Returns Node or NULL.
+     * @return edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<L>|null Returns edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node or NULL.
      */
     public Node<L> getLast()
     {
 
         /*
-         * Finds the last Node
+         * Finds the last edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node
          */
         Node<L> last = this.head;
         while (last.getNext() != null)
@@ -102,8 +103,8 @@ public class LinkedList<L> {
         // Handle special case of index = 0.
         if (0 != index) // I was taught to reverse so if I just put = it will flag me first
         {
-            // Needs to find the Parent Node before the index
-            // so new Node can be added to parent's next pointer.
+            // Needs to find the Parent edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node before the index
+            // so new edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node can be added to parent's next pointer.
             --index; // This gets the value of the NODE AT THE INDEX of the node just before this index number
             // I want the new node to be at.
             // Initialization of vars for while loop.
@@ -117,7 +118,7 @@ public class LinkedList<L> {
                 nextNode = nextNode.getNext();
                 ++position;
             }
-            // Inserts new Node value and link it with the old node
+            // Inserts new edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node value and link it with the old node
             // that was at this position.
             parentNode.setNext(new Node<>(value, nextNode));
         } else
@@ -140,14 +141,14 @@ public class LinkedList<L> {
         int count = 0;
         if (this.head != null)
         {
-            Node<L> current = this.head;
+            Node<L> left = this.head;
             do
             {
-                current = current.getNext();
+                left = left.getLeft();
                 // ++ before because we're not using the value of count at this point
                 // we're only returning the value of count when the condition is false
                 ++count;
-            } while (current != null);
+            } while (left != null);
         }
         return count;
     }
@@ -155,7 +156,7 @@ public class LinkedList<L> {
     /**
      * Looks at head of LL
      *
-     * @return Node<L> Returns the head of list.
+     * @return edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<L> Returns the head of list.
      */
     public L peek()
     {
@@ -181,14 +182,14 @@ public class LinkedList<L> {
             // Instead I didn't need to create an empty node
             // and assign the value of head to next and then discard
             // the temporary pointer to the old node.
-//            Node<L> temp = this.head; *Deprecated*
+//            edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node<L> temp = this.head; *Deprecated*
             this.head = new Node<>(value, this.head);
 //            this.head.setNext(temp); *Deprecated*
         }
     }
 
     /**
-     * Print LinkedList Method
+     * Print edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.LinkedList Method
      */
     public void print()
     {
@@ -257,14 +258,14 @@ public class LinkedList<L> {
         }
         /*
          * this will create a new local var
-         * of the Node type
+         * of the edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node type
          * this.head passes the value of the "next"
-         * from the first Node to removedNode local var
+         * from the first edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node to removedNode local var
          */
         Node<L> removedNode = this.head;
         /*
-         * this takes the value of head from the 2nd Node
-         * and makes it the value of Head for the Second Node?
+         * this takes the value of head from the 2nd edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node
+         * and makes it the value of Head for the Second edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node?
          */
         this.head = this.head.getNext();
         /*
@@ -274,7 +275,7 @@ public class LinkedList<L> {
          */
         removedNode.setNext(null);
         /* return removedNode;
-        Node removedNode = this.head;
+        edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node removedNode = this.head;
         int value = this.head.getValue();
         this.head = this.head.getNext();
         */
@@ -289,13 +290,13 @@ public class LinkedList<L> {
     {
         if (this.head == null)
         {
-            throw new IndexOutOfBoundsException(" * LinkedList Empty * ");
+            throw new IndexOutOfBoundsException(" * edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.LinkedList Empty * ");
         }
         if (this.head.getNext() == null)
         {
             return this.removeFirst();
         }
-        // Find second to last Node
+        // Find second to last edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node
         Node<L> traveller = this.head;
         while (traveller.getNext().getNext() != null)
         {
@@ -305,8 +306,8 @@ public class LinkedList<L> {
         Node<L> lastNode = traveller.getNext();
 
         /*
-         Remove pointer from second to last Node,
-         to last Node
+         Remove pointer from second to last edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node,
+         to last edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.Node
          */
         L value = lastNode.getValue();
         secondToLastNode.setNext(null);

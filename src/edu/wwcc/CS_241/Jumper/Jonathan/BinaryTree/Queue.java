@@ -1,3 +1,5 @@
+package edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree;
+
 public class Queue<T> extends LinkedList<T> {
     //Can also just call, length - "size" and then change
     //method public int size()
@@ -5,7 +7,7 @@ public class Queue<T> extends LinkedList<T> {
     //Since I am now extending LL class, This is duplicating of head in LL.
     //"extends" did that for me.
     //todo: this will be commented out as "list" will be replaced with "head"
-//    private LinkedList<T> list;
+//    private edu.wwcc.CS_241.Jumper.Jonathan.edu.wwcc.CS_241.Jumper.Jonathan.BinaryTree.BinaryTree.LinkedList<T> list;
 
     public Queue()
     {
