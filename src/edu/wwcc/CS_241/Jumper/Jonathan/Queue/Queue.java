@@ -10,9 +10,21 @@ import edu.wwcc.CS_241.Jumper.Jonathan.SingleLL.LinkedList;
 import edu.wwcc.CS_241.Jumper.Jonathan.SingleLL.Node;
 
 /**
+ * Queue class.
+ *
+ * Have to use LinkedList<V> or Java bitches about unchecked types.
+ * I ran into an error with my *public V dequeue()* method , Inside, I called my return removeFirst() method from my LL Class,
+ * Every bit of my code worked except for this one method call from the Queue class to the LL Class,
+ * I checked the removeFirst() method in the LL Class and everything was fine.
+ * It was giving me the error "uses unchecked or unsafe operations." . It was saying I wasn't returning the
+ * right type (V) , but I was.
+ * I decided to cast the type and it worked! However, after some research on Stack Overflow,
+ * (https://stackoverflow.com/questions/197986/what-causes-javac-to-issue-the-uses-unchecked-or-unsafe-operations-warning),
+ * I realized that "public class Queue<V>  insert V "extends LinkedList<V> {"
  *
  */
-public class Queue<L> extends LinkedList {
+@SuppressWarnings("WeakerAccess")
+public class Queue<V> extends LinkedList<V> {
     //Can also just call, length - "size" and then change
     //method public int size()
     private int length;
@@ -27,46 +39,22 @@ public class Queue<L> extends LinkedList {
         this.length = 0;
     }
 
-    public Queue(Node<L> list)
+    public Queue(Node<V> list)
     {
         this.head = list;
         this.length = length();
     }
 
-    public L dequeue()
+    public V dequeue()
     {
         --length;
         return removeFirst();
     }
 
-    public void enqueue(L value)
+    public void enqueue(V value)
     {
         this.append(value);
         ++length;
     }
 
-    /**
-     * Finds length of list.
-     *
-     * @return int
-     */
-    public int length()
-    {
-        /*
-        Creates new variable count to store value of next
-         */
-        int count = 0;
-        if (this.head != null)
-        {
-            Node<L> current = this.head;
-            do
-            {
-                current = current.getNext();
-                // ++ before because we're not using the value of count at this point
-                // we're only returning the value of count when the condition is false
-                ++count;
-            } while (current != null);
-        }
-        return count;
-    }
 }
