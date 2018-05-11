@@ -11,9 +11,10 @@ import edu.wwcc.CS_241.Jumper.Jonathan.SingleLL.Node;
 
 /**
  * Queue class.
- *
+ * <p>
  * Have to use LinkedList<V> or Java bitches about unchecked types.
- * I ran into an error with my *public V dequeue()* method , Inside, I called my return removeFirst() method from my LL Class,
+ * I ran into an error with my *public V dequeue()* method , Inside, I called my return removeFirst() method from my LL
+ * Class,
  * Every bit of my code worked except for this one method call from the Queue class to the LL Class,
  * I checked the removeFirst() method in the LL Class and everything was fine.
  * It was giving me the error "uses unchecked or unsafe operations." . It was saying I wasn't returning the
@@ -21,13 +22,9 @@ import edu.wwcc.CS_241.Jumper.Jonathan.SingleLL.Node;
  * I decided to cast the type and it worked! However, after some research on Stack Overflow,
  * (https://stackoverflow.com/questions/197986/what-causes-javac-to-issue-the-uses-unchecked-or-unsafe-operations-warning),
  * I realized that "public class Queue<V>  insert V "extends LinkedList<V> {"
- *
  */
 @SuppressWarnings("WeakerAccess")
 public class Queue<V> extends LinkedList<V> {
-    //Can also just call, length - "size" and then change
-    //method public int size()
-    private int length;
     //Since I am now extending LL class, This is duplicating of head in LL.
     //"extends" did that for me.
     //todo: this will be commented out as "list" will be replaced with "head"
@@ -36,25 +33,28 @@ public class Queue<V> extends LinkedList<V> {
     public Queue()
     {
         this.head = null;
-        this.length = 0;
     }
 
     public Queue(Node<V> list)
     {
         this.head = list;
-        this.length = length();
     }
 
     public V dequeue()
     {
-        --length;
         return removeFirst();
     }
 
     public void enqueue(V value)
     {
         this.append(value);
-        ++length;
     }
 
+    /**
+     * @return
+     */
+    public int size()
+    {
+        return length();
+    }
 }
