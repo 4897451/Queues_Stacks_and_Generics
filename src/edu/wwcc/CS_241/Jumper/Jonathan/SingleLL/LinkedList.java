@@ -187,12 +187,12 @@ public class LinkedList<V> {
         while (null != traveler)
         {
             System.out.print("Value(" + traveler.getValue() + ")--->");
-            //System.out.print(traveler); //*test* <-Traveler at this point
-            System.out.print("");
             traveler = traveler.getNext();
-            //System.out.print(traveler); //*test* <-Traveler at this point
+            if (null == traveler) {
+                // Should just use string of "null" here it is more efficient.
+                System.out.print(traveler);
+            }
         }
-        //System.out.print(traveler.getValue());
         System.out.println();
     }
 
