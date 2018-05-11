@@ -16,8 +16,8 @@ package edu.wwcc.CS_241.Jumper.Jonathan.SingleLL;
  * * comment requested by me for elucidation on Generic Types - good form *
  */
 @SuppressWarnings("WeakerAccess")
-public class LinkedList<L> {
-    protected Node<L> head;
+public class LinkedList<V> {
+    protected Node<V> head;
 
     /**
      * Constructor
@@ -31,7 +31,7 @@ public class LinkedList<L> {
      * @param value
      *     <L> Passes (Value) into append method | Main property.
      */
-    public void append(L value)
+    public void append(V value)
     {
 
         /*
@@ -43,7 +43,7 @@ public class LinkedList<L> {
             this.head = new Node<>(value);
             return;
         }
-        Node<L> traveler = getLast();
+        Node<V> traveler = getLast();
 
         /*
          * At this point, traveler points to last node
@@ -56,13 +56,13 @@ public class LinkedList<L> {
      *
      * @return Node<L>|null Returns Node or NULL.
      */
-    public Node<L> getLast()
+    public Node<V> getLast()
     {
 
         /*
          * Finds the last Node
          */
-        Node<L> last = this.head;
+        Node<V> last = this.head;
         while (last.getNext() != null)
         {
             last = last.getNext();
@@ -78,7 +78,7 @@ public class LinkedList<L> {
      * @param index
      *     int
      */
-    public void insertAt(L value, int index)
+    public void insertAt(V value, int index)
     {
         int length = this.length();
         // Check for invalid conditions.
@@ -102,8 +102,8 @@ public class LinkedList<L> {
             --index; // This gets the value of the NODE AT THE INDEX of the node just before this index number
             // I want the new node to be at.
             // Initialization of vars for while loop.
-            Node<L> parentNode = this.head; //Initially it starts with the 1st node in LL and stuffs it's head value into var parentNode
-            Node<L> nextNode = this.head.getNext(); // "" takes the ".next" value of parentNode and stuffs it into nextNode
+            Node<V> parentNode = this.head; //Initially it starts with the 1st node in LL and stuffs it's head value into var parentNode
+            Node<V> nextNode = this.head.getNext(); // "" takes the ".next" value of parentNode and stuffs it into nextNode
             int position = 0;
             // Loop until just before insert point.
             while (position < index)
@@ -133,7 +133,7 @@ public class LinkedList<L> {
         int count = 0;
         if (this.head != null)
         {
-            Node<L> current = this.head;
+            Node<V> current = this.head;
             do
             {
                 current = current.getNext();
@@ -148,7 +148,7 @@ public class LinkedList<L> {
     /**
      * @return L
      */
-    public L peek()
+    public V peek()
     {
         return head.getValue();
     }
@@ -159,7 +159,7 @@ public class LinkedList<L> {
      * @param value
      *     <L> Value for the node.
      */
-    public void prepend(L value)
+    public void prepend(V value)
     {
         if (this.head == null) // Checks to see if its the only node
         {
@@ -183,7 +183,7 @@ public class LinkedList<L> {
      */
     public void print()
     {
-        Node<L> traveler = this.head;
+        Node<V> traveler = this.head;
         while (traveler != null)
         {
             System.out.print("Value(" + traveler.getValue() + ")--->");
@@ -202,7 +202,7 @@ public class LinkedList<L> {
      *
      * @return <L>
      */
-    public L removeAt(int index)
+    public V removeAt(int index)
     {
         if (this.head == null)
         {
@@ -212,8 +212,8 @@ public class LinkedList<L> {
         {
             throw new IndexOutOfBoundsException();
         }
-        Node<L> trailer = null;
-        Node<L> traveler = this.head;
+        Node<V> trailer = null;
+        Node<V> traveler = this.head;
         int position = 0;
         while (traveler != null && position != index)
         {
@@ -227,12 +227,12 @@ public class LinkedList<L> {
         }
         if (trailer == null)
         {
-            L value = this.head.getValue();
+            V value = this.head.getValue();
             this.head = this.head.getNext();
             return value;
             // return this.removeFirst();
         }
-        L value = traveler.getValue();
+        V value = traveler.getValue();
         trailer.setNext(traveler.getNext());
         return value;
     }
@@ -240,7 +240,7 @@ public class LinkedList<L> {
     /**
      * @return <L>
      */
-    public L removeFirst()
+    public V removeFirst()
     {
         if (this.head == null)
         {
@@ -252,7 +252,7 @@ public class LinkedList<L> {
          * this.head passes the value of the "next"
          * from the first Node to removedNode local var
          */
-        Node<L> removedNode = this.head;
+        Node<V> removedNode = this.head;
         /*
          * this takes the value of head from the 2nd Node
          * and makes it the value of Head for the Second Node?
@@ -276,7 +276,7 @@ public class LinkedList<L> {
     /**
      * @return <L>
      */
-    public L removeLast()
+    public V removeLast()
     {
         if (this.head == null)
         {
@@ -287,19 +287,19 @@ public class LinkedList<L> {
             return this.removeFirst();
         }
         // Find second to last Node
-        Node<L> traveller = this.head;
+        Node<V> traveller = this.head;
         while (traveller.getNext().getNext() != null)
         {
             traveller = traveller.getNext();
         }
-        Node<L> secondToLastNode = traveller;
-        Node<L> lastNode = traveller.getNext();
+        Node<V> secondToLastNode = traveller;
+        Node<V> lastNode = traveller.getNext();
 
         /*
          Remove pointer from second to last Node,
          to last Node
          */
-        L value = lastNode.getValue();
+        V value = lastNode.getValue();
         secondToLastNode.setNext(null);
         return value;
     }

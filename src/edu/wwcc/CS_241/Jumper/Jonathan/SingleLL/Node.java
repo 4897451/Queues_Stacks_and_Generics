@@ -10,9 +10,9 @@ package edu.wwcc.CS_241.Jumper.Jonathan.SingleLL;
  * NODE CLASS
  */
 @SuppressWarnings("WeakerAccess")
-public class Node<T> {
-    private Node<T> next;
-    private T value;
+public class Node<V> {
+    private Node<V> next;
+    private V value;
 
     /**
      * Default value constructor.
@@ -26,9 +26,9 @@ public class Node<T> {
      * Value only constructor.
      *
      * @param value
-     *     <T>
+     *     <V>
      */
-    public Node(T value)
+    public Node(V value)
     {
         this.value = value;
         this.next = null;
@@ -39,38 +39,38 @@ public class Node<T> {
      * Optional all value constructor.
      *
      * @param value
-     *     <T>
+     *     <V>
      * @param next
-     *     Node<T>
+     *     Node<V>
      */
-    public Node(T value, Node<T> next)
+    public Node(V value, Node<V> next)
     {
         this.value = value;
         this.next = next;
     }
 
     /**
-     * @return Node<T>
+     * @return Node<V>
      */
-    public Node<T> getNext()
+    public Node<V> getNext()
     {
         return this.next;
     }
 
     /**
      * @param next
-     *     Node<T>
+     *     Node<V>
      */
-    public void setNext(Node<T> next)
+    public void setNext(Node<V> next)
     {
         this.next = next;
     }
     // Begin Getters and Setters
 
     /**
-     * @return <T>
+     * @return <V>
      */
-    public T getValue()
+    public V getValue()
     {
         return this.value;
     }
@@ -79,7 +79,7 @@ public class Node<T> {
      * @param value
      *     T
      */
-    public void setValue(T value)
+    public void setValue(V value)
     {
         this.value = value;
     }
