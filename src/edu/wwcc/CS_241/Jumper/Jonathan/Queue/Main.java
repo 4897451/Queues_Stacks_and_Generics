@@ -73,14 +73,16 @@ public class Main {
             ++i;
         } while (i < num);
         System.out.println("\nQueueing method testing");
+        queue.print();
+        System.out.println("Starting LinkedList length = " + queue.size());
         System.out.println("Enqueueing");
+        queue.enqueue(101);
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
-        queue.enqueue(101);
         System.out.println("Dequeueing");
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
-        queue.dequeue();
+        System.out.println("Dequeued " + queue.dequeue());
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
         queue.print();

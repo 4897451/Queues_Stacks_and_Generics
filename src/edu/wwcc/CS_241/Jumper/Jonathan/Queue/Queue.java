@@ -50,11 +50,4 @@ public class Queue<V> extends LinkedList<V> {
         this.append(value);
     }
 
-    /**
-     * @return
-     */
-    public int size()
-    {
-        return length();
-    }
 }
