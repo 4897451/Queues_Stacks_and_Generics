@@ -12,38 +12,6 @@ public class Main {
     public static void main(String[] args)
     {
         Queue<Integer> queue = new Queue<>();
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        queue.append(111);
-        System.out.println("* CREATED FIRST NODE *");
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        System.out.println();
-        queue.append(222);
-        queue.append(333);
-        System.out.println("* Finished appending and creating the LinkedList. 111,222,333 *");
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        System.out.println();
-        System.out.println("* Prepend Method (added 444 to beginning) *");
-        queue.prepend(444);
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        System.out.println();
-        System.out.println("* REMOVE AT INDEX 0 *");
-        queue.removeAt(0);
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        System.out.println();
-        System.out.println("* REMOVE FIRST *");
-        queue.removeFirst();
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
-        System.out.println();
-        System.out.println("* REMOVE LAST *");
-        queue.removeLast();
-        System.out.println("\nLinkedList length = " + queue.length());
-        queue.print();
 
         /*
          * Random for insertAt() method
