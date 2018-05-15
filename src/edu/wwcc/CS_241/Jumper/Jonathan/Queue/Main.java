@@ -40,18 +40,19 @@ public class Main {
             }
             ++i;
         } while (i < num);
-        System.out.println("\nQueueing method testing");
-        System.out.println("Enqueueing");
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
-        queue.enqueue(101);
-        System.out.println("Dequeueing");
+        System.out.println("\nQueueing method testing \n");
+        System.out.println("Enqueueing 1001");
+        queue.enqueue(1001);
+
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
-        queue.dequeue();
+        System.out.println();
+        System.out.println("Dequeueing " + queue.dequeue());
         queue.print();
         System.out.println("Final LinkedList length = " + queue.size());
-        queue.print();
+        System.out.println();
         System.out.println("Peeking at top value = " + queue.peek());
         queue.print();
     }
