@@ -41,18 +41,17 @@ public class Main {
             ++i;
         } while (i < num);
         System.out.println("\nStacking method testing");
-        stack.print();
-        System.out.println("Final LinkedList size = " + stack.size());
-        System.out.println("Pushing");
+        System.out.println(stack);
+        System.out.println("LinkedList size = " + stack.size());
+        System.out.println("Pushing 101");
         stack.push(101);
-        stack.print();
+        System.out.println(stack);
         System.out.println("Final LinkedList size = " + stack.size());
-        System.out.println("Popping");
-        stack.pop();
-        stack.print();
+        System.out.println("Popping " + stack.pop());
+        System.out.println(stack);
         System.out.println("Final LinkedList size = " + stack.size());
-        stack.print();
+        System.out.println(stack);
         System.out.println("Peeking at top value = " + stack.peek());
-        stack.print();
+        System.out.println(stack);
     }
 }
